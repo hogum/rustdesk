@@ -82,7 +82,7 @@ class ConnectStatus: Reactor.Component {
             return translate('connecting_status');
         }
         if (!handler.using_public_server()) return translate('Ready');
-        return <span>{translate("Ready")}, <span .link #setup-server>{translate("setup_server_tip")}</span></span>;
+        return <span>{translate("Ready")}</span>;
     }
 
     event click $(#start-service) () {
@@ -796,7 +796,6 @@ class UpdateMe: Reactor.Component {
         return <div .install-me>
             <div>{translate('Status')}</div>
             <div>There is a newer version of {handler.get_app_name()} ({handler.get_new_version()}) available.</div>
-            <div #install-me.link>{translate('Click to ' + update_or_download)}</div>
             <div #download-percent style="display:hidden; padding-top: 1em;" />
         </div>;
     }
